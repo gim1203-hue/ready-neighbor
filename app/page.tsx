@@ -185,6 +185,7 @@ function buildItems(profile: Profile): ChecklistItem[] {
 }
 
 export default function Home() {
+  console.log("READYNEIGHBOR HOME COMPONENT RUNNING");
   const [user, setUser] = useState<User | null>(null);
   const [authLoading, setAuthLoading] = useState(true);
   const [dataLoading, setDataLoading] = useState(false);
@@ -204,6 +205,7 @@ export default function Home() {
     const unsubscribe = onAuthStateChanged(
       auth,
       async (firebaseUser) => {
+        console.log("FIREBASE USER:", firebaseUser);
         setAuthLoading(true);
         setAuthError("");
         dataLoaded.current = false;
@@ -430,7 +432,10 @@ export default function Home() {
       </main>
     );
   }
-
+console.log("AUTH CHECK:", {
+  user,
+  authLoading
+});
   if (!user) {
     return (
       <main className="auth-page">
