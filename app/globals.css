@@ -14,3 +14,136 @@
 @media(max-width:480px){h1{font-size:3.2rem}.section{padding-top:4.5rem;padding-bottom:4.5rem}.hero-visual{height:330px;border-radius:2rem}.house-three{display:none}.visual-card{left:16px;right:16px}.essentials-grid,.source-grid{grid-template-columns:1fr}.feature-card{min-height:285px}.progress-block>div:first-child{flex-direction:column;gap:.2rem}.plan-form{border-radius:1rem}.form-actions{align-items:flex-start;flex-direction:column}.save-status{margin-left:0}.neighbors-visual{min-height:300px}.neighbor-circle{width:96px;height:96px}.circle-a{left:34%}.source-grid a{min-height:150px}}
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*:before,*:after{transition:none!important}}
 @media print{.site-header,.hero,.signal-strip,.essentials,.neighbors,.sources,footer,.profile-panel,.section-heading,.plan-intro,.button,.text-button,.local-badge{display:none!important}body{background:#fff;color:#000}.section{padding:0}.checklist-layout,.plan-section{display:block;background:#fff;color:#000}.checklist-panel,.plan-form{box-shadow:none;border:0;padding:0}.check-item{break-inside:avoid}.plan-form input,.plan-form textarea{border:0;border-bottom:1px solid #777;border-radius:0}.save-status{display:none}}
+/* Firebase account + Google sign-in */
+
+.auth-page {
+  min-height: 100vh;
+  display: grid;
+  place-items: center;
+  padding: 1.5rem;
+  background: var(--paper);
+}
+
+.auth-card {
+  width: min(460px, 100%);
+  padding: 2.5rem;
+  border: 1px solid var(--line);
+  border-radius: 1.5rem;
+  background: var(--white);
+  box-shadow: var(--shadow);
+  text-align: center;
+}
+
+.auth-card .brand {
+  margin-bottom: 2rem;
+}
+
+.auth-card h1 {
+  font-size: clamp(2.5rem, 7vw, 4rem);
+  margin-bottom: 1rem;
+}
+
+.auth-card > p {
+  color: var(--muted);
+  margin-bottom: 2rem;
+}
+
+.google-button {
+  width: 100%;
+  min-height: 52px;
+  border: 1px solid var(--line);
+  border-radius: 99px;
+  background: var(--white);
+  color: var(--ink);
+  font-weight: 800;
+  cursor: pointer;
+}
+
+.google-button:hover {
+  background: var(--cream);
+}
+
+.auth-error {
+  margin-top: 1rem;
+  color: #a83232;
+  font-size: .85rem;
+}
+
+.auth-loading {
+  min-height: 100vh;
+  display: grid;
+  place-items: center;
+  background: var(--paper);
+  font-weight: 800;
+}
+
+.account-area {
+  display: flex;
+  align-items: center;
+  gap: .7rem;
+  margin-left: 1rem;
+}
+
+.account-photo {
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.account-info {
+  display: flex;
+  flex-direction: column;
+  line-height: 1.15;
+}
+
+.account-info strong {
+  max-width: 150px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  font-size: .78rem;
+}
+
+.account-info small {
+  max-width: 150px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  color: var(--muted);
+  font-size: .66rem;
+}
+
+.sign-out-button {
+  border: 1px solid var(--line);
+  border-radius: 99px;
+  padding: .5rem .8rem;
+  background: var(--white);
+  color: var(--ink);
+  font-size: .72rem;
+  font-weight: 800;
+  cursor: pointer;
+}
+
+.sign-out-button:hover {
+  background: var(--cream);
+}
+
+.cloud-status {
+  color: var(--green);
+  font-size: .78rem;
+}
+
+@media (max-width: 760px) {
+  .account-info {
+    display: none;
+  }
+
+  .account-area {
+    margin-left: auto;
+  }
+
+  .auth-card {
+    padding: 1.7rem;
+  }
+}
